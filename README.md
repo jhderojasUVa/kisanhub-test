@@ -65,7 +65,7 @@ The way to run it from the code:
 The way to run it from the dist:
 
 1. Download it
-2. Put the /dist and all the files on your server
+2. Put the /dist and all the files on your server (remember on the root of the server if not you must "build it" in other directory)
 3. Open it :)
 
 # From here the typical doc of the ng
