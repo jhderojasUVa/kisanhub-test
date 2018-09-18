@@ -133,6 +133,6 @@ export class GraphComponent {
   }
 
   public chartClicked(e:any):void {
-    // We can do something but... II don't know what to show or to do :)
+    // We can do something but... I don't know what to show or to do :)
   }
 }
