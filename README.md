@@ -32,7 +32,11 @@ Can it be done in other ways? Yes, for example with only one component, or witho
 
 This component it's for selecting the data. No need of constructor, no need of really nothing, only the material 2 way.
 
-It recives the years of the graph component (from the filter), nothing more.
+It recives the years of the graph component (from the filter), nothing more. This is because I don't know if the data fetched have the same years of not, so, if I do (as I do) the fetch from the service in the graph component I must send the begining year and end year from the graph component to here in order to visualize it.
+
+But there's another catch that I haven't put in case. What will happen if the are gaps between years?. Well a better way (I haven't do it because I haven't suppose it) it to send from the graph to the selector component an array with all the years taking from the fetch.
+
+You know, you always must test the data on the backend and on the front!
 
 No css needed thanks to bootstrap.
 
@@ -46,7 +50,11 @@ It have a lot of methods too, from when it changes (ngOnChanges) to some private
 
 I have put the methods for the ng2-chart for click and hover events if needed but aren't used. They are there for future development (if... I don't know, you want to do something when clicking).
 
+Here it can be a problem if we don't have all the months data of one year, and it must be solved, but not in this version but I know that this can be happen. Remember, test on the back and test again on the front.
+
 The documentation is on the comments.
+
+No css needed.
 
 ### Fetch Service
 
