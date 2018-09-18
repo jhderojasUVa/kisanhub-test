@@ -4,6 +4,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+// Import hammerjs for using tactile elements 
+import 'hammerjs';
+
 if (environment.production) {
   enableProdMode();
 }

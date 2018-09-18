@@ -1,0 +1,33 @@
+<div *ngIf="allTheData">
+  <p>Remember that ng2-chart have some problems updating, for updating from other dates (from, to), change them and them change the metric (to change the type of the graph).</p>
+  <p>I know it's a failure and can be resolved with more more time.</p>
+  <div *ngIf="chartData.length > 0">
+    <div style="display: block;">
+      <canvas baseChart
+              [chartType]="chartType"
+              [labels]="chartLabels"
+              [legend]="chartLegend"
+              [datasets]="chartData"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+    <div style="margin-top: 1em; margin-bottom: 1em; border-top: 1px dotted #e9e9e9;">
+      <h5 class="text-right" style="margin-top: 1em; margin-bottom: 0.5em;">Table of the data <button class="btn btn-outline-dark btn-sm" style="margin-left: 1em;"(click)="Show = !Show">{{Show ? 'Hide' : 'Show'}}</button></h5>
+      <table class="table table-dark" *ngIf="Show">
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Month</th>
+            <th scope="col">Value</th>
+          </tr>
+          <tr *ngFor="let data of filteredData; let i = index">
+            <td>{{data.year}}</td>
+            <td>{{data.month}}</td>
+            <td>{{data.value}}</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
