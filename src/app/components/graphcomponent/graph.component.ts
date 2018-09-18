@@ -15,6 +15,7 @@ import { FetchService } from '../../services/fetch.service';
 })
 export class GraphComponent {
 
+  // The workaround for updating the ng2-chart
   @ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
   // Reading the inputs
@@ -63,8 +64,12 @@ export class GraphComponent {
           this.populateTheData();
         }
       });
-      // This is a patch but a very bad patch for ng2-charts
+      // This is a patch but a very bad patch for updating ng2-charts
       // with time it can be resolved but I think it's no good more time
+      // As I have seen it's a problem with the this.data of the chartjs
+      // that gets undefined and don't update the chart, but
+      // if you modify things like the labels or the type, the this.data of
+      // the chart exists. With more time it can be debugged and solved
       if (this.chart != undefined) {
         // This is for a better displaying the data
         // It can be done in another select but... well, I don't know if it's
