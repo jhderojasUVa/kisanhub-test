@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project it's a Kisanhub coding test.
 
-This code, app, have a great failure thanks the library ng2-charts (based on charts) that can update the graph on other dates properly.
+This code, app, have a great failure thanks the library ng2-charts (based on charts) that can't update the graph on other dates properly.
 
 For updating the graph when changing the dates (from to to), you must, first change the dates and (after that) change the metrics in otder to change the type of graph. Only in that way (now) it updated the graph.
 
@@ -14,7 +14,7 @@ Every component/service have a lot of comments to understand what I have do and 
 
 ## How its done
 
-It can be done in several ways, so much that you can count them but I have selected this:
+It can be done in several ways, so much that you can't count them but I have selected this:
 
 - Two components (selector and graph)
 - One service for the data
@@ -22,11 +22,13 @@ It can be done in several ways, so much that you can count them but I have selec
 - Bootstrap (for responsive)
 - ng2-chart as a library for showing the data
 
+### How it works
+
 On these way it can be show of a service, input, output (communication between components), the update method on angular... well, the typical use of angular :)
 
-First you choose the where and the metric, then the component (selector one) uses the service for consulting the aw3 for fetching the data (and have all). The selector component shows you then the dates to choose, and, after you choose two it, comunicates with the other component (graph) witch generates the graph and the data table. Nothing more, nothing less.
+First you choose the where and the metric, then the component (selector one) talks to the graph component who uses the service for consulting the aw3 for fetching the data (and have all). Then, it (graph component) sends the range years to the selector component. The selector component shows you then the dates to choose, and, after you choose two it, comunicates with the other component (graph) witch generates the graph and the data table. Nothing more, nothing less.
 
-Can it be done in other ways? Yes, for example with only one component, or without the service or using other library for the graph... but as I say, this way it's more modulable and show my "programming skills" (I suppose).
+Can it be done in other ways? Yes, for example with only one component, or without the service or using other library for the graph or using Redux or GraphQL or Storage or... but as I say, this way it's more modulable and show my "programming skills" (I suppose).
 
 ### Selector Component
 
@@ -58,7 +60,7 @@ No css needed.
 
 ### Fetch Service
 
-A typical service to be inyected in the graph component for fetching the data, nothing more nothing less. Very easy to understant
+A typical service to be inyected in the graph component for fetching the data, nothing more nothing less. Very easy to understand.
 
 ## Build
 
